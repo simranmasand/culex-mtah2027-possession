@@ -1,0 +1,58 @@
+{
+ "output": "evaluation/results/nn_a4.csv",
+ "sha256": "7be53b3e1bdc8542a3c22d40c6adc6a10a98a1276942bfc7f3da84faae173ca3",
+ "valid": true,
+ "config": {
+  "_comment": "CANDIDATE D19 (A4 draws3): D18 model (A3 bw5_cp1) trained on the hard bench plus 2 extra random hard degradations (seeds 5000+g, 6000+g); decoding re-tuned on the standard hard bench (e19), change-point head used in decoding (beta 0.5).",
+  "name": "nn_a4",
+  "inputs": "no_shape",
+  "train_bench": "hard",
+  "train_config": {
+   "arch": "gru",
+   "hidden": 64,
+   "layers": 3,
+   "dropout": 0.1,
+   "lr": 0.003,
+   "epochs": 20,
+   "window": 64
+  },
+  "decode": {
+   "alpha": 0.3,
+   "stay": 1.0,
+   "ha": 5.0,
+   "beta": 0.5
+  },
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "pre_kickoff_dead": true,
+  "train_loss": {
+   "bw": 5,
+   "r": 5,
+   "cp": 1.0
+  },
+  "train_extra_draws": [
+   5000,
+   6000
+  ]
+ },
+ "seconds": 2537,
+ "python": "3.11.18",
+ "platform": "macOS-15.7.3-arm64-arm-64bit",
+ "numpy": "2.4.6",
+ "torch": "2.15.0",
+ "label_counts": {
+  "H": 69151,
+  "A": 55177,
+  "D": 34529,
+  "X": 40462
+ },
+ "pre_kickoff_frames_set_to_D": 1964
+}

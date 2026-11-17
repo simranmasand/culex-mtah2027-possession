@@ -1,0 +1,4 @@
+variant	spellF1_hard_tune	poss	alpha	stay	ha	beta
+draws3	0.6985	839	0.3	1.0	5.0	0.5
+draws5	0.6894	846	0.3	2.0	10.0	0.5
+draws3_mix	0.6933	846	0.3	1.0	10.0	0.5

@@ -1,0 +1,246 @@
+{
+ "tune_hard": {
+  "referee_v3": {
+   "spellF1": 0.43323545641161476,
+   "macroF1": 0.7121717162831982,
+   "poss": 510,
+   "D_precision": 0.5351920211220142,
+   "D_recall": 0.873040689112586,
+   "D_F1": 0.6635897711111707,
+   "dead_share": 0.37617666419335555,
+   "stoppages_true": 196,
+   "stoppages_called": 254,
+   "stoppage_recall": 0.8622448979591837,
+   "stoppage_precision": 0.5826771653543307,
+   "recall_by_length": {
+    "1-5s": {
+     "n": 28,
+     "found": 0.7857142857142857
+    },
+    "5-15s": {
+     "n": 80,
+     "found": 0.8375
+    },
+    "15-30s": {
+     "n": 47,
+     "found": 0.9148936170212766
+    },
+    "30-infs": {
+     "n": 41,
+     "found": 0.9024390243902439
+    }
+   },
+   "start_delay_median_s": -0.04
+  },
+  "gru_final": {
+   "spellF1": 0.6984754669250836,
+   "macroF1": 0.8220578440312161,
+   "poss": 839,
+   "D_precision": 0.7553322855859901,
+   "D_recall": 0.8144076173569224,
+   "D_F1": 0.7837583358409613,
+   "dead_share": 0.2486398727213943,
+   "stoppages_true": 196,
+   "stoppages_called": 200,
+   "stoppage_recall": 0.8112244897959183,
+   "stoppage_precision": 0.79,
+   "recall_by_length": {
+    "1-5s": {
+     "n": 28,
+     "found": 0.6428571428571429
+    },
+    "5-15s": {
+     "n": 80,
+     "found": 0.85
+    },
+    "15-30s": {
+     "n": 47,
+     "found": 0.8085106382978723
+    },
+    "30-infs": {
+     "n": 41,
+     "found": 0.8536585365853658
+    }
+   },
+   "start_delay_median_s": 0.0
+  },
+  "truth": {
+   "poss": 1022,
+   "dead_share": 0.23060408491753173
+  },
+  "gru_minus_referee": {
+   "diff": 0.26297941952654674,
+   "lo": 0.2266438898345473,
+   "hi": 0.2992129334428784,
+   "episodes": 198
+  }
+ },
+ "fresh_hard": {
+  "referee_v3": {
+   "spellF1": 0.4479232156151829,
+   "macroF1": 0.7188800403549789,
+   "poss": 509,
+   "D_precision": 0.5445155783183953,
+   "D_recall": 0.9007887676262331,
+   "D_F1": 0.6787408037940051,
+   "dead_share": 0.38148691742474816,
+   "stoppages_true": 196,
+   "stoppages_called": 239,
+   "stoppage_recall": 0.8418367346938775,
+   "stoppage_precision": 0.5983263598326359,
+   "recall_by_length": {
+    "1-5s": {
+     "n": 28,
+     "found": 0.6071428571428571
+    },
+    "5-15s": {
+     "n": 80,
+     "found": 0.8
+    },
+    "15-30s": {
+     "n": 47,
+     "found": 0.9361702127659575
+    },
+    "30-infs": {
+     "n": 41,
+     "found": 0.975609756097561
+    }
+   },
+   "start_delay_median_s": -0.04
+  },
+  "gru_final": {
+   "spellF1": 0.6844569484501521,
+   "macroF1": 0.8314524618408182,
+   "poss": 814,
+   "D_precision": 0.8187536937424247,
+   "D_recall": 0.8244437271791976,
+   "D_F1": 0.8215888587898861,
+   "dead_share": 0.23220669747838565,
+   "stoppages_true": 196,
+   "stoppages_called": 187,
+   "stoppage_recall": 0.75,
+   "stoppage_precision": 0.7914438502673797,
+   "recall_by_length": {
+    "1-5s": {
+     "n": 28,
+     "found": 0.4642857142857143
+    },
+    "5-15s": {
+     "n": 80,
+     "found": 0.7625
+    },
+    "15-30s": {
+     "n": 47,
+     "found": 0.8297872340425532
+    },
+    "30-infs": {
+     "n": 41,
+     "found": 0.8292682926829268
+    }
+   },
+   "start_delay_median_s": 0.0
+  },
+  "truth": {
+   "poss": 1022,
+   "dead_share": 0.23060408491753173
+  },
+  "gru_minus_referee": {
+   "diff": 0.23632737513323054,
+   "lo": 0.2068122847125418,
+   "hi": 0.26539198681277465,
+   "episodes": 198
+  }
+ },
+ "fresh_easy": {
+  "referee_v3": {
+   "spellF1": 0.5263294538492418,
+   "macroF1": 0.7533886413818837,
+   "poss": 597,
+   "D_precision": 0.5539135431017972,
+   "D_recall": 0.9043291440560005,
+   "D_F1": 0.68701892315414,
+   "dead_share": 0.3764883479134636,
+   "stoppages_true": 196,
+   "stoppages_called": 261,
+   "stoppage_recall": 0.8571428571428571,
+   "stoppage_precision": 0.6053639846743295,
+   "recall_by_length": {
+    "1-5s": {
+     "n": 28,
+     "found": 0.7142857142857143
+    },
+    "5-15s": {
+     "n": 80,
+     "found": 0.8
+    },
+    "15-30s": {
+     "n": 47,
+     "found": 0.9361702127659575
+    },
+    "30-infs": {
+     "n": 41,
+     "found": 0.975609756097561
+    }
+   },
+   "start_delay_median_s": -0.08
+  },
+  "gru_final": {
+   "spellF1": 0.8173381684717093,
+   "macroF1": 0.8652842907919368,
+   "poss": 977,
+   "D_precision": 0.8052827906038915,
+   "D_recall": 0.8056726715216558,
+   "D_F1": 0.8054776838835891,
+   "dead_share": 0.23071573281727192,
+   "stoppages_true": 196,
+   "stoppages_called": 212,
+   "stoppage_recall": 0.8877551020408163,
+   "stoppage_precision": 0.8349056603773585,
+   "recall_by_length": {
+    "1-5s": {
+     "n": 28,
+     "found": 0.8571428571428571
+    },
+    "5-15s": {
+     "n": 80,
+     "found": 0.975
+    },
+    "15-30s": {
+     "n": 47,
+     "found": 0.851063829787234
+    },
+    "30-infs": {
+     "n": 41,
+     "found": 0.7804878048780488
+    }
+   },
+   "start_delay_median_s": 0.0
+  },
+  "truth": {
+   "poss": 1022,
+   "dead_share": 0.23060408491753173
+  },
+  "gru_minus_referee": {
+   "diff": 0.2900634999402111,
+   "lo": 0.26146740220001147,
+   "hi": 0.32148210897169505,
+   "episodes": 198
+  }
+ },
+ "barath": {
+  "graded_min": 105.90466666666666,
+  "gru_dead_min": 23.019333333333336,
+  "referee_dead_min": 41.59,
+  "both_dead_min": 15.669333333333332,
+  "share_of_gru_dead_also_referee": 0.6807031770395899,
+  "share_of_referee_dead_also_gru": 0.3767572333092891,
+  "referee_only_dead_min_by_cause": {
+   "before_kickoff": 0.002,
+   "break": 10.114666666666666,
+   "out": 10.264000000000001,
+   "setup": 0.06266666666666666,
+   "still": 5.477333333333333
+  },
+  "label_agreement": 0.6031651107599917
+ }
+}

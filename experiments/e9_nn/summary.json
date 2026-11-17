@@ -1,0 +1,31 @@
+{
+ "best_config": {
+  "arch": "gru",
+  "hidden": 32,
+  "layers": 2,
+  "dropout": 0.1,
+  "lr": 0.01,
+  "epochs": 12,
+  "window": 64,
+  "alpha": 0.4,
+  "stay": 1.0
+ },
+ "best_hard_logo": 0.5246839713504459,
+ "runs": 38,
+ "hard_spellF1": 0.5246839713504459,
+ "hard_vs_hmm": {
+  "diff": 0.09365601102100118,
+  "lo": 0.06228812135744484,
+  "hi": 0.12722705862288988,
+  "episodes": 198
+ },
+ "easy_spellF1": 0.6275746161724575,
+ "easy_vs_hmm": {
+  "diff": 0.07427394741764326,
+  "lo": 0.046380557915735955,
+  "hi": 0.10094100534604213,
+  "episodes": 198
+ },
+ "barath_possessions": 243,
+ "barath_D_share": 0.22454156883234608
+}

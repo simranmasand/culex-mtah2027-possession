@@ -1,0 +1,36 @@
+{
+ "base": {
+  "name": "draws3",
+  "decode": [
+   0.3,
+   1.0,
+   5.0,
+   0.5
+  ],
+  "tune_spellF1": 0.6984754669250836,
+  "tune_poss": 839
+ },
+ "variants": {
+  "draws5": {
+   "decode": [
+    0.3,
+    2.0,
+    10.0,
+    0.5
+   ],
+   "tune_spellF1": 0.6893904466977582,
+   "tune_poss": 846
+  },
+  "draws3_mix": {
+   "decode": [
+    0.3,
+    1.0,
+    10.0,
+    0.5
+   ],
+   "tune_spellF1": 0.6932858664232465,
+   "tune_poss": 846
+  }
+ },
+ "confirmed": []
+}

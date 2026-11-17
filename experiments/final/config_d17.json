@@ -1,0 +1,31 @@
+{
+ "_comment": "The final submission, fully specified. Change the model here, never in reproduce_final.py. D13 winner (experiments/e13_nn/summary.json) without the 6 team-shape inputs (E5c, D16), plus D on the graded frames before the 2nd-half kick-off (published rule, D17, 2026-11-15).",
+ "name": "nn_final",
+ "inputs": "no_shape",
+ "train_bench": "hard",
+ "train_config": {
+  "arch": "gru",
+  "hidden": 64,
+  "layers": 3,
+  "dropout": 0.1,
+  "lr": 0.003,
+  "epochs": 20,
+  "window": 64
+ },
+ "decode": {
+  "alpha": 0.5,
+  "stay": 4.0,
+  "ha": 10.0
+ },
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "pre_kickoff_dead": true
+}

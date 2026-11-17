@@ -1,0 +1,36 @@
+{
+ "_comment": "D18 (2026-11-15): A3 bw5_cp1 \u2014 same bi-GRU 3x64, no team-shape inputs (D16), trained with loss x5 on steps within +-5 steps (1 s) of a label change plus a change-point head (weight 1, training only); decoding re-tuned on the standard hard bench (e18). Pre-kickoff D rule (D17). Previous final config: config_d17.json.",
+ "name": "nn_a3",
+ "inputs": "no_shape",
+ "train_bench": "hard",
+ "train_config": {
+  "arch": "gru",
+  "hidden": 64,
+  "layers": 3,
+  "dropout": 0.1,
+  "lr": 0.003,
+  "epochs": 20,
+  "window": 64
+ },
+ "decode": {
+  "alpha": 0.3,
+  "stay": 4.0,
+  "ha": 20.0
+ },
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "pre_kickoff_dead": true,
+ "train_loss": {
+  "bw": 5,
+  "r": 5,
+  "cp": 1.0
+ }
+}

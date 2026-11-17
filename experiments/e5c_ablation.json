@@ -1,0 +1,41 @@
+{
+ "config": {
+  "arch": "gru",
+  "hidden": 64,
+  "layers": 3,
+  "dropout": 0.1,
+  "lr": 0.003,
+  "epochs": 20,
+  "window": 64
+ },
+ "decode": [
+  0.5,
+  4.0,
+  10.0
+ ],
+ "config_source": "D13 winner",
+ "hard": {
+  "with_shape": 0.5732872732710308,
+  "with_shape_poss": 763,
+  "without_shape": 0.5542682013447718,
+  "without_shape_poss": 680,
+  "with_minus_without": {
+   "diff": 0.017907421487984188,
+   "lo": -0.004070122253765662,
+   "hi": 0.0438687497193401,
+   "episodes": 198
+  }
+ },
+ "easy": {
+  "with_shape": 0.6994575862908988,
+  "with_shape_poss": 841,
+  "without_shape": 0.7410798714738203,
+  "without_shape_poss": 859,
+  "with_minus_without": {
+   "diff": -0.04116322133103223,
+   "lo": -0.05840706778469481,
+   "hi": -0.023110095387410597,
+   "episodes": 198
+  }
+ }
+}

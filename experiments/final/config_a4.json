@@ -1,0 +1,41 @@
+{
+ "_comment": "D19 (2026-11-16): A4 draws3 \u2014 D18 model (A3: bi-GRU 3x64, no team-shape inputs, loss x5 within 1 s of a label change + change-point head) trained on the hard bench plus 2 extra random hard degradations (seeds 5000+g, 6000+g); decoding re-tuned on the standard hard bench (e19), change-point head scales the leave-state cost (beta 0.5). Pre-kickoff D rule (D17). Previous configs: config_a3.json (D18), config_d17.json (D17).",
+ "name": "nn_a4",
+ "inputs": "no_shape",
+ "train_bench": "hard",
+ "train_config": {
+  "arch": "gru",
+  "hidden": 64,
+  "layers": 3,
+  "dropout": 0.1,
+  "lr": 0.003,
+  "epochs": 20,
+  "window": 64
+ },
+ "decode": {
+  "alpha": 0.3,
+  "stay": 1.0,
+  "ha": 5.0,
+  "beta": 0.5
+ },
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "pre_kickoff_dead": true,
+ "train_loss": {
+  "bw": 5,
+  "r": 5,
+  "cp": 1.0
+ },
+ "train_extra_draws": [
+  5000,
+  6000
+ ]
+}

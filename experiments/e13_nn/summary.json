@@ -1,0 +1,49 @@
+{
+ "runs": 20,
+ "best_train_config": {
+  "arch": "gru",
+  "hidden": 64,
+  "layers": 3,
+  "dropout": 0.1,
+  "lr": 0.003,
+  "epochs": 20,
+  "window": 64
+ },
+ "best_decode": {
+  "alpha": 0.5,
+  "stay": 4.0,
+  "ha": 10.0
+ },
+ "best_hard_search": 0.5766339023728546,
+ "previous_config_redecoded_hard_search": 0.5278077493637024,
+ "hard": {
+  "new_spellF1": 0.5732872732710308,
+  "new_poss": 763,
+  "old_spellF1": 0.5143757547885025,
+  "old_poss": 602,
+  "new_minus_old": {
+   "diff": 0.058263305322128756,
+   "lo": 0.04056493222596633,
+   "hi": 0.07829828458557327,
+   "episodes": 198
+  }
+ },
+ "easy": {
+  "new_spellF1": 0.6994575862908988,
+  "new_poss": 841,
+  "old_spellF1": 0.6487231581325991,
+  "old_poss": 734,
+  "new_minus_old": {
+   "diff": 0.05151854174996362,
+   "lo": 0.03299221650779573,
+   "hi": 0.06961231381034405,
+   "episodes": 198
+  }
+ },
+ "beats_previous_on_both": true,
+ "barath": {
+  "possessions": 249,
+  "D_share": 0.25991929848857775,
+  "agree_nearest": 0.7547023417661995
+ }
+}

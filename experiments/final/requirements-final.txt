@@ -1,0 +1,11 @@
+# Exact versions used to produce the final submission (conda env `mtah`, Python 3.11.18, macOS arm64, CPU).
+numpy==2.4.6
+pandas==3.1.1
+torch==2.15.0
+# Reads the Metrica Sports sample data (external training data) when the cache is built in a fresh clone.
+kloppy==3.18.0
+lxml==6.1.3
+# Optional: figures for the technical document (experiments/figures/).
+# matplotlib==3.11.2
+# Optional: TensorBoard logging during research runs only, not needed to regenerate the file.
+# tensorboard==2.21.0

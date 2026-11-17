@@ -1,0 +1,21 @@
+run	spellF1_hard	poss	alpha	stay	ha	seconds	status	train_config
+1	0.5278	730	1.2	8.0	10.0	302	keep	{"arch": "gru", "dropout": 0.1, "epochs": 12, "hidden": 32, "layers": 2, "lr": 0.01, "window": 64}
+2	0.5249	694	0.8	4.0	10.0	372	discard	{"arch": "gru", "dropout": 0.1, "epochs": 12, "hidden": 32, "layers": 3, "lr": 0.01, "window": 64}
+3	0.5067	787	1.2	4.0	3.0	264	discard	{"arch": "gru", "dropout": 0.1, "epochs": 12, "hidden": 32, "layers": 2, "lr": 0.01, "window": 300}
+4	0.5239	685	0.5	8.0	10.0	260	discard	{"arch": "gru", "dropout": 0.2, "epochs": 12, "hidden": 32, "layers": 2, "lr": 0.01, "window": 64}
+5	0.4825	694	0.5	8.0	10.0	399	discard	{"arch": "gru", "dropout": 0.1, "epochs": 12, "hidden": 96, "layers": 2, "lr": 0.01, "window": 64}
+6	0.5130	666	0.5	4.0	1.0	583	discard	{"arch": "gru", "dropout": 0.1, "epochs": 30, "hidden": 32, "layers": 2, "lr": 0.01, "window": 64}
+7	0.5637	742	0.5	8.0	1.0	402	keep	{"arch": "gru", "dropout": 0.1, "epochs": 20, "hidden": 32, "layers": 2, "lr": 0.003, "window": 64}
+8	0.5766	737	0.5	4.0	10.0	692	keep	{"arch": "gru", "dropout": 0.1, "epochs": 20, "hidden": 64, "layers": 3, "lr": 0.003, "window": 64}
+9	0.5320	826	1.2	1.0	10.0	481	discard	{"arch": "gru", "dropout": 0.1, "epochs": 20, "hidden": 64, "layers": 2, "lr": 0.003, "window": 128}
+10	0.5478	811	0.5	8.0	10.0	246	discard	{"arch": "gru", "dropout": 0.1, "epochs": 20, "hidden": 64, "layers": 1, "lr": 0.003, "window": 64}
+11	0.5753	778	1.2	2.0	1.0	462	discard	{"arch": "gru", "dropout": 0.1, "epochs": 20, "hidden": 64, "layers": 2, "lr": 0.003, "window": 64}
+12	0.4892	697	1.2	4.0	10.0	680	discard	{"arch": "gru", "dropout": 0.1, "epochs": 20, "hidden": 64, "layers": 3, "lr": 0.01, "window": 64}
+13	0.5609	733	0.5	4.0	10.0	602	discard	{"arch": "gru", "dropout": 0.1, "epochs": 20, "hidden": 32, "layers": 3, "lr": 0.003, "window": 64}
+14	0.5676	727	0.3	8.0	10.0	974	discard	{"arch": "gru", "dropout": 0.1, "epochs": 20, "hidden": 96, "layers": 3, "lr": 0.003, "window": 64}
+15	0.5586	724	0.8	4.0	10.0	689	discard	{"arch": "gru", "dropout": 0.2, "epochs": 20, "hidden": 64, "layers": 3, "lr": 0.003, "window": 64}
+16	0.5492	752	0.8	8.0	10.0	430	discard	{"arch": "gru", "dropout": 0.1, "epochs": 12, "hidden": 64, "layers": 3, "lr": 0.003, "window": 64}
+17	0.5584	749	0.5	4.0	10.0	941	discard	{"arch": "gru", "dropout": 0.1, "epochs": 20, "hidden": 96, "layers": 3, "lr": 0.003, "window": 128}
+18	0.5398	784	1.2	2.0	10.0	693	discard	{"arch": "gru", "dropout": 0.1, "epochs": 20, "hidden": 64, "layers": 3, "lr": 0.003, "window": 128}
+19	0.5598	753	0.3	8.0	10.0	668	discard	{"arch": "gru", "dropout": 0.0, "epochs": 20, "hidden": 64, "layers": 3, "lr": 0.003, "window": 64}
+20	0.5631	754	0.5	4.0	10.0	986	discard	{"arch": "gru", "dropout": 0.1, "epochs": 30, "hidden": 64, "layers": 3, "lr": 0.003, "window": 64}
