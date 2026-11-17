@@ -11,6 +11,7 @@ Start with the top README; this page is the map.
 | `final/config.json` | The final model's full definition (D19). `config_a3.json`, `config_d17.json` = earlier finals |
 | `final/requirements-final.txt` | Pinned dependencies |
 | `final/manifest_reference.json` | Expected sha256, label counts, library versions |
+| `final/weights/` | The 8 trained networks (`--weights` regenerates the file without training) |
 | `atd_cache.py` | Parses the BAR-ATH tracking (ATD) into a cache under `data/cache/` |
 | `external_metrica.py` | Loads the Metrica sample games and derives per-frame H/A/D labels from their events |
 | `bench.py` | Degrades the Metrica games to look like BAR-ATH's tracking; scoring + paired episode bootstrap |

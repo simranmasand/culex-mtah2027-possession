@@ -109,6 +109,9 @@ def main():
     ap.add_argument("--out", default=os.path.join(ROOT, "evaluation", "results", "final.csv"))
     ap.add_argument("--check", help="existing submission to compare against frame by frame")
     ap.add_argument("--rebuild-cache", action="store_true")
+    ap.add_argument("--save-weights", metavar="DIR", help="also save each seed's trained network to DIR/seed_<s>.pt")
+    ap.add_argument("--weights", metavar="DIR",
+                    help="skip training: load the 8 trained networks from DIR (e.g. experiments/final/weights)")
     args = ap.parse_args()
 
     cfg = json.load(open(args.config))
@@ -126,21 +129,32 @@ def main():
             load_game(g, rebuild=True)
 
     train = list(bench.bench_games(cfg["train_bench"]))
-    for seed0 in cfg.get("train_extra_draws", []):     # A4 (e19 draws3): extra random degradations, same level
+    for seed0 in ([] if args.weights else cfg.get("train_extra_draws", [])):   # A4 (e19 draws3): extra degradations
         import e19_data_mix as D
         train += D.draws(cfg["train_bench"], seed0)
     B = bench.barath()
     Xb = torch.tensor(E.steps(E.frame_inputs(B)))[None]
     lps, cps = [], []
     for s in cfg["seeds"]:
-        model = train_model(cfg, train, s)
+        if args.weights:                      # pre-trained networks (trained on Metrica only) instead of training
+            tc, loss = cfg["train_config"], cfg.get("train_loss") or {}
+            if not loss:
+                raise SystemExit("--weights supports configs with train_loss (A3 network)")
+            model = A.Net(Xb.shape[2], tc["hidden"], tc["layers"], tc["dropout"], loss["cp"])
+            model.load_state_dict(torch.load(os.path.join(args.weights, f"seed_{s}.pt"), weights_only=True))
+            model.eval()
+        else:
+            model = train_model(cfg, train, s)
+            if args.save_weights:
+                os.makedirs(args.save_weights, exist_ok=True)
+                torch.save(model.state_dict(), os.path.join(args.save_weights, f"seed_{s}.pt"))
         with torch.no_grad():
             out = model(Xb)
             logits = out[0] if isinstance(out, tuple) else out   # A3 net also returns the change-point logit
             lps.append(torch.log_softmax(logits, -1)[0].numpy())
             if isinstance(out, tuple) and out[1] is not None:
                 cps.append(torch.sigmoid(out[1])[0].numpy())
-        print(f"seed {s} trained ({time.time() - t0:.0f} s)", flush=True)
+        print(f"seed {s} {'loaded' if args.weights else 'trained'} ({time.time() - t0:.0f} s)", flush=True)
     lp = np.mean(lps, axis=0)
     lp -= np.log(np.exp(lp).sum(1, keepdims=True))
     dec = cfg["decode"]
@@ -165,7 +179,7 @@ def main():
     valid = v.returncode == 0 and "Valid." in v.stdout
 
     manifest = {"output": os.path.relpath(args.out, ROOT), "sha256": sha256(args.out), "valid": valid,
-                "config": cfg, "seconds": round(time.time() - t0),
+                "config": cfg, "seconds": round(time.time() - t0), "weights": args.weights or "trained",
                 "python": platform.python_version(), "platform": platform.platform(),
                 "numpy": np.__version__, "torch": torch.__version__,
                 "label_counts": {k: int((labels == k).sum()) for k in "HADX"},

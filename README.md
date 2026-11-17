@@ -103,11 +103,21 @@ python evaluation/validate_submission.py CuleX.csv
 - The model is fully defined by `experiments/final/config.json` (network, inputs, training loss, extra degradations,
   decoding, seeds, pre-kickoff rule).
 
-**Determinism.** Training is seeded and runs on CPU; we reproduced the file bit-for-bit 5 times on the same machine, the last one from a clean copy of
-this repository in a fresh environment (fresh Metrica clone, all caches rebuilt, 43 min).
-Floating-point results of CPU training can differ across CPU architectures / BLAS builds. If your
-sha256 differs, please compare with `--check` against our submitted file: differences, if any, come from training
-numerics, not from the method.
+**Fast route without retraining (recommended on another machine).** The 8 trained networks are in
+`experiments/final/weights/` (seed_0.pt … seed_7.pt, 5.5 MB, trained on the Metrica sample data only):
+
+```bash
+python experiments/final/reproduce_final.py --rebuild-cache --weights experiments/final/weights --out CuleX.csv
+```
+
+This skips training (about 1–2 min) and gives the same file (verified: same sha256, 0 frames differing). It still needs the
+Metrica data, because the decoder's transition matrix is fitted on those games.
+
+**Determinism.** Training is seeded and runs on CPU; we reproduced the file bit-for-bit 6 times on the same machine (one of
+them from a clean copy of this repository in a fresh environment, all caches rebuilt, 43 min; the last one while saving the
+shipped weights). Floating-point results of CPU training can differ across CPU architectures / BLAS builds; the
+`--weights` route avoids training and is the most stable way to regenerate the file elsewhere. If your sha256 differs,
+please compare with `--check` against our submitted file.
 
 What the pipeline does:
 
